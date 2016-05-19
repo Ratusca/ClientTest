@@ -40,8 +40,10 @@ public class ClientTest {
 
                     case "login": {
                         String response;
+
                         write.println("Test-User");
                         write.println("password1");
+
                         response = read.readLine();
                         System.out.println(response);
                     }
@@ -49,10 +51,11 @@ public class ClientTest {
 
                     case "register": {
                         String response;
-                        write.println("Rata");
-                        write.println("Alexandru");
+
                         write.println("Test-UserNUEXISTA");
                         write.println("password1");
+                        write.println("Rata");
+                        write.println("Alexandru");
                         write.println("alexandru.rata@gmail.com");
                         write.println("0722");
 
@@ -68,12 +71,15 @@ public class ClientTest {
 
                         String results = new String();
                         String input;
-                        
+
                         while (!"".equals(input = read.readLine())) {
                             results += input + "\n";
                         }
-                        System.out.println();
-                        System.out.println(results);
+                        if (results != null) {
+                            System.out.println(results);
+                        } else {
+                            System.out.println("No buildings around!");
+                        }
                     }
                     break;
 
@@ -87,8 +93,8 @@ public class ClientTest {
                                 .element("suite", "A")
                                 .element("username", "Test-User")
                                 .element("picture", "www.google.ro")
-                                .element("latitude", "47")
-                                .element("longitude", "25");
+                                .element("latitude", "47.13823")
+                                .element("longitude", "25.76512");
 
                         write.println(insertData);
 
